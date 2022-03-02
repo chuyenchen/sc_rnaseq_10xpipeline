@@ -25,19 +25,19 @@ cd /home/cc550/yard/run_cellranger_mkfastq/tutorial_walk_through/outs/fastq_path
 ## fastq to count
 1. follow https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_ct
 2. get human pbmc fastq files
-wget https://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v3/pbmc_1k_v3_fastqs.tar
-tar -zxvf refdata-cellranger-GRCh38-3.0.0.tar.gz
+	wget https://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v3/pbmc_1k_v3_fastqs.tar
+	tar -zxvf refdata-cellranger-GRCh38-3.0.0.tar.gz
 3. get human reference genome
-wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
-tar -xzvf refdata-gex-GRCh38-2020-A.tar.gz #using -zxvf will get error messages
+	wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
+	tar -xzvf refdata-gex-GRCh38-2020-A.tar.gz #using -zxvf will get error messages
 4. main code. takes 4 hrs to complete 
-srun --pty -p medium -t 00-13:00 --mem=200G cellranger count --id=run_count_1kpbmcs --fastqs=/home/cc550/yard/run_cellranger_count/pbmc_1k_v3_fastqs --transcriptome=/home/cc550/yard/run_cellranger_count/refdata-cellranger-GRCh38-3.0.0
+	srun --pty -p medium -t 00-13:00 --mem=200G cellranger count --id=run_count_1kpbmcs --fastqs=/home/cc550/yard/run_cellranger_count/pbmc_1k_v3_fastqs --transcriptome=/home/cc550/yard/run_cellranger_count/refdata-cellranger-GRCh38-3.0.0
 5. go to final output folder <outs>. Data for the Seurat R package locates at outs/filtered_feature_bc_matrix
 6. open FileZilla to download outs folder.
-host: transfer.rc.hms.harvard.edu
-port: 22  (the SFTP port) 
-username: your HMS ID (formerly known as eCommons ID), the ID you use to login to O2, in lowercase, e.g., ab123 (not your Harvard ID or Harvard Key) 
-password: your HMS ID password, the password you use when logging in to O2
+	host: transfer.rc.hms.harvard.edu
+	port: 22  (the SFTP port) 
+	username: your HMS ID (formerly known as eCommons ID), the ID you use to login to O2, in lowercase, e.g., ab123 (not your Harvard ID or Harvard Key) 
+	password: your HMS ID password, the password you use when logging in to O2
 
 ## Seurat
 1. open R studio
