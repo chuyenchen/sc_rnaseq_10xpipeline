@@ -38,6 +38,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# Dir to ignore
+/outs
+
 # Others
 *.html
 *.csv
