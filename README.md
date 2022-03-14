@@ -40,6 +40,10 @@ cd /home/cc550/yard/run_cellranger_mkfastq/tutorial_walk_through/outs/fastq_path
 	password: your HMS ID password, the password you use when logging in to O2
 
 ## Seurat
-1. open R studio
+1. open R studio. make sure R version >= 4.0
+2. follow https://satijalab.org/seurat/articles/pbmc3k_tutorial.html to load data, QC
+	Things to consider during QC: https://github.com/hbctraining/scRNA-seq_online/blob/master/lessons/04_SC_quality_control.md
+3. save final cluster plots to a new folder 'results'. 	
+
 
 
